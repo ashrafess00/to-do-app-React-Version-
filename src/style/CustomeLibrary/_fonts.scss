@@ -1,0 +1,34 @@
+@use "variables";
+.text {
+  &-c {
+    text-align: center;
+  }
+  &-s {
+    text-align: start;
+  }
+  &-e {
+    text-align: end;
+  }
+  &-m-c {
+    color: variables.$main-color;
+  }
+  &-s-c {
+    color: variables.$secondary-color;
+  }
+  &-link {
+    text-decoration: underline;
+  }
+  &-sold {
+    text-decoration: line-through;
+  }
+}
+
+@for $i from 1 through 8 {
+  .fw-#{$i * 100} {
+    font-weight: $i * 100;
+  }
+}
+
+.small-text {
+  font-size: 0.8rem;
+}

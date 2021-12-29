@@ -1,0 +1,52 @@
+// margins
+@use "variables";
+
+@for $i from 1 through 6 {
+  .m-#{$i} {
+    margin: variables.$margin * $i;
+  }
+  .mr-#{$i} {
+    margin-right: variables.$margin * $i;
+  }
+  .ml-#{$i} {
+    margin-left: variables.$margin * $i;
+  }
+  .mt-#{$i} {
+    margin-top: variables.$margin * $i;
+  }
+  .mb-#{$i} {
+    margin-bottom: variables.$margin * $i;
+  }
+  // .mb-all-div-#{$i} {
+  //   > div:not(:last-child) {
+  //     margin-bottom: variables.$margin * $i;
+  //   }
+  // }
+  .mb-all-#{$i} {
+    > *:not(:last-child) {
+      margin-bottom: variables.$margin * $i;
+    }
+  }
+}
+
+// padding
+
+@for $i from 1 through 6 {
+  .p-#{$i} {
+    padding: variables.$padding * $i;
+  }
+  .pr-#{$i} {
+    padding-right: variables.$padding * $i;
+  }
+  .pl-#{$i} {
+    padding-left: variables.$padding * $i;
+  }
+  .pb-#{$i} {
+    padding-bottom: variables.$padding * $i;
+  }
+  .pt-#{$i} {
+    padding-top: variables.$padding * $i;
+  }
+}
+
+// .m-all

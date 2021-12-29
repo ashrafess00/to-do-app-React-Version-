@@ -1,0 +1,39 @@
+// font size
+
+$fontSize: 1rem;
+
+.fs {
+  &-1 {
+    font-size: $fontSize;
+  }
+  &-2 {
+    font-size: $fontSize * 2;
+  }
+  &-3 {
+    font-size: $fontSize * 3;
+  }
+  &-4 {
+    font-size: $fontSize * 4;
+  }
+  &-5 {
+    font-size: $fontSize * 5;
+  }
+  &-6 {
+    font-size: $fontSize * 6;
+  }
+}
+
+.w {
+  &-100 {
+    width: 100%;
+  }
+  &-75 {
+    width: 75%;
+  }
+  &-50 {
+    width: 50%;
+  }
+  &-25 {
+    width: 25%;
+  }
+}

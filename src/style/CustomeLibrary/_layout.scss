@@ -1,0 +1,66 @@
+@use "mixins";
+@use "variables";
+.flex {
+  display: flex;
+  // justify content
+  &.jc-s {
+    justify-content: flex-start;
+  }
+  &.jc-c {
+    justify-content: center;
+  }
+  &.jc-sb {
+    justify-content: space-between;
+  }
+  &.jc-e {
+    justify-content: flex-end;
+  }
+  //align items
+  &.ai-s {
+    align-items: flex-start;
+  }
+  &.ai-c {
+    align-items: center;
+  }
+  &.ai-e {
+    align-items: flex-end;
+  }
+  //align content
+  &.ac-s {
+    align-content: flex-start;
+  }
+  &.ac-c {
+    align-content: center;
+  }
+  &.ac-e {
+    align-content: flex-end;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @for $i from 1 through 12 {
+    &-#{$i} {
+      display: grid;
+      @include mixins.grid($i);
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .gap-#{$i} {
+    gap: #{$i}rem;
+  }
+  .gap-c-#{$i} {
+    column-gap: #{$i}rem;
+  }
+  .gap-r-#{$i} {
+    row-gap: #{$i}rem;
+  }
+}
+
+.container {
+  max-width: 100%;
+  padding: variables.$padding;
+}

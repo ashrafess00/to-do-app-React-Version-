@@ -1,0 +1,99 @@
+@use "./CustomeLibrary/mainLibrary";
+
+.to-do-container {
+  width: 30rem;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15vh;
+}
+
+.filterCon {
+  display: flex;
+}
+.filterCon2 {
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .to-do-container {
+    width: 90%;
+  }
+  .filterCon {
+    display: none;
+  }
+  .filterCon2 {
+    display: flex;
+    margin-top: 1.5rem;
+    background-color: var(--white);
+    padding: 0.8rem 2.5rem;
+  }
+}
+
+.circle {
+  width: 1.3rem;
+  height: 1.3rem;
+  border: var(--secondaryColor) solid 1px;
+  border-radius: 50%;
+  &:hover {
+    background-image: mainLibrary.$gradient;
+    position: relative;
+    > div {
+      background-color: var(--white);
+      border-radius: 50%;
+      width: 90%;
+      height: 90%;
+      @include mainLibrary.center-h-v();
+    }
+  }
+}
+
+.task-con {
+  background: var(--white);
+  input {
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}
+
+.taskCon2 {
+  background: var(--white);
+  border-radius: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--secondaryColor);
+}
+.completedCircle {
+  background-image: var(--gradient);
+  position: relative;
+  &::before {
+    content: url("../Images/icon-check.svg");
+    @include mainLibrary.center-h-v;
+  }
+}
+
+.tasksContainer {
+  border-radius: mainLibrary.$radius;
+  overflow: hidden;
+  div {
+    margin-bottom: 1px;
+  }
+}
+
+picture {
+  position: absolute;
+}
+
+h1 {
+  letter-spacing: 1.5rem;
+  color: #ffffff;
+}
+
+.icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}

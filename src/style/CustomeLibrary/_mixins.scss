@@ -1,0 +1,197 @@
+// center items
+@use "variables";
+@mixin center-h-v($property: abs) {
+  @if $property == abs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $property == flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@mixin center-v($property: abs) {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+//grid layout
+@mixin grid($gtc: 12) {
+  grid-template-columns: repeat($gtc, 1fr);
+}
+
+@mixin slider(
+  $sliderBg: #d3d3d3,
+  $sliderHeight: 10px,
+  $thumbBg: variables.$main-color,
+  $thumbSize: 18px
+) {
+  margin: 2rem;
+  width: 50%;
+  input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: $sliderHeight;
+    background: $sliderBg;
+    border-radius: variables.$radius;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      width: $thumbSize;
+      height: $thumbSize;
+      background: $thumbBg;
+      cursor: pointer; /* Cursor on hover */
+      border-radius: 50%;
+    }
+
+    &::-moz-range-thumb {
+      width: $thumbSize;
+      height: $thumbSize;
+      background: $thumbBg;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+  }
+}
+
+@mixin radio(
+  $checkmarkBg: #eee,
+  $dotbG: white,
+  $checkedBg: variables.$main-color,
+  $checkmarkSize: 20px,
+  $dotSize: 30%
+) {
+  display: block;
+  position: relative;
+  padding-left: 1.9em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  input[type="radio"] {
+    display: none;
+    &:checked ~ .checkmark {
+      background-color: $checkedBg;
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $checkmarkSize;
+    width: $checkmarkSize;
+    background-color: $checkmarkBg;
+    border-radius: 50%;
+    margin-right: 1rem;
+    @include center-h-v(flex);
+    &::after {
+      content: "";
+      display: none;
+      width: $dotSize;
+      height: $dotSize;
+      background-color: $dotbG;
+      border-radius: 50%;
+    }
+  }
+}
+
+@mixin checkBox(
+  $checkmarkBg: #eee,
+  $dotbG: white,
+  $checkedBg: variables.$main-color,
+  $checkmarkSize: 20px,
+  $dotSize: 30%
+) {
+  display: block;
+  position: relative;
+  padding-left: 1.9em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  input[type="checkbox"] {
+    display: none;
+    &:checked ~ .checkmark {
+      background-color: $checkedBg;
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $checkmarkSize;
+    width: $checkmarkSize;
+    background-color: $checkmarkBg;
+    margin-right: 1rem;
+    padding: 2px 2px 3.5px;
+    @include center-h-v(flex);
+    &::after {
+      content: "";
+      width: 25%;
+      height: 50%;
+      border: solid $dotbG;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+@mixin switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked + .slider {
+      background-color: #2196f3;
+    }
+    &:checked + .slider::before {
+      transform: translateX(26px);
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+}

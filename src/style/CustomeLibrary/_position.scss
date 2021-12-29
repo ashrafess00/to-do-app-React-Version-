@@ -1,0 +1,14 @@
+@use "mixins";
+.center-h-v {
+  @include mixins.center-h-v;
+}
+.center-h-v-f {
+  @include mixins.center-h-v(flex);
+}
+.center-v {
+  @include mixins.center-v;
+}
+
+.pos-abs {
+  position: absolute;
+}

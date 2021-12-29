@@ -1,0 +1,31 @@
+@use "variables";
+@use "mixins";
+//range
+
+.sliderContainer {
+  //params : $slider bg, $slider height, $thumb bg , $thums size
+  @include mixins.slider();
+}
+
+.radioContainer {
+  //params:$checkmark Bg , $dot bG , $checked Bg , $checkmark Size ,$dot Size
+  //must include span.checkmark inside the container
+  @include mixins.radio();
+}
+.checkboxContainer {
+  //params:$checkmark Bg , $dot bG , $checked Bg , $checkmark Size ,$dot Size
+  //must include span.checkmark inside the container
+  @include mixins.checkBox;
+}
+
+.switchContainer {
+  @include mixins.switch;
+}
+
+// input[type="text"] {
+//   max-width: 100%;
+//   padding: variables.$padding / 2;
+//   ::placeholder{
+
+//   }
+// }

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+$main-color: hsl(235, 21%, 11%);
+$secondary-color: hsl(236, 33%, 92%);
+$thirdColor: hsl(0, 0%, 90%);
+$white: #ffffff;
+$gradient: linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+$bgImg: url("../Images/bg-desktop-light.jpg");
+$bgImgDark: url("../Images/bg-desktop-dark.jpg");
+
+:root {
+  --mainColor: #{$main-color};
+  --secondaryColor: #{$secondary-color};
+  --thirdColor: #{$thirdColor};
+  --white: #{$white};
+  --gradient: #{$gradient};
+
+  --bgImg: #{$bgImg};
+}
+
+$radius: 5px;
+$cursor: pointer;
+
+$container-padding: 1em;
+$margin: 1em;
+$padding: 1em;
+$transition-seconds: 0.4s;
+$font-family: "Kumbh Sans", sans-serif;
+$letter-spacing: 0.1em;
