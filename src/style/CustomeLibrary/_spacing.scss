@@ -17,11 +17,6 @@
   .mb-#{$i} {
     margin-bottom: variables.$margin * $i;
   }
-  // .mb-all-div-#{$i} {
-  //   > div:not(:last-child) {
-  //     margin-bottom: variables.$margin * $i;
-  //   }
-  // }
   .mb-all-#{$i} {
     > *:not(:last-child) {
       margin-bottom: variables.$margin * $i;
@@ -49,4 +44,6 @@
   }
 }
 
-// .m-all
+.m-a {
+  margin: auto;
+}

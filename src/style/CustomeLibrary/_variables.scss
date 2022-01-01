@@ -6,16 +6,18 @@ $white: #ffffff;
 $gradient: linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
 $bgImg: url("../Images/bg-desktop-light.jpg");
-$bgImgDark: url("../Images/bg-desktop-dark.jpg");
+$bgImgPhone: url("../Images/bg-mobile-light.jpg");
+$blue: hsl(220, 98%, 61%);
 
 :root {
+  --blue: #{$blue};
   --mainColor: #{$main-color};
   --secondaryColor: #{$secondary-color};
   --thirdColor: #{$thirdColor};
   --white: #{$white};
   --gradient: #{$gradient};
-
   --bgImg: #{$bgImg};
+  --bgImgPhone: #{$bgImgPhone};
 }
 
 $radius: 5px;

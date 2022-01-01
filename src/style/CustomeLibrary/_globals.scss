@@ -25,6 +25,12 @@ body {
   }
 }
 
+@media screen and (max-width: 400px) {
+  body {
+    background-image: var(--bgImgPhone);
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -59,3 +65,11 @@ button {
 .br {
   border-radius: variables.$radius;
 }
+
+// $op: 0.25;
+// @while $op <= 1 {
+//   .op-#{$op} {
+//     opacity: $op;
+//   }
+//   $op: $op + 0.25;
+// }

@@ -6,14 +6,33 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 15vh;
+  top: 10vh;
 }
 
 .filterCon {
   display: flex;
+  div {
+    font-weight: 400;
+    &:hover {
+      font-weight: 700;
+    }
+    &.clicked {
+      color: var(--blue);
+      font-weight: 700;
+    }
+  }
 }
 .filterCon2 {
   display: none;
+  div {
+    &:hover {
+      font-weight: 700;
+    }
+    &.clicked {
+      color: var(--blue);
+      font-weight: 700;
+    }
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -61,6 +80,7 @@
 .taskCon2 {
   background: var(--white);
   border-radius: 0;
+  cursor: pointer !important;
 }
 
 .completed {
@@ -70,6 +90,7 @@
 .completedCircle {
   background-image: var(--gradient);
   position: relative;
+  border: none;
   &::before {
     content: url("../Images/icon-check.svg");
     @include mainLibrary.center-h-v;
@@ -89,11 +110,39 @@ picture {
 }
 
 h1 {
-  letter-spacing: 1.5rem;
+  letter-spacing: 1.3rem;
   color: #ffffff;
+  font-size: 2rem;
 }
 
 .icon {
   width: 1.6rem;
   height: 1.6rem;
+}
+
+@mixin delete() {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--mainColor);
+  @include mainLibrary.center-h-v();
+}
+.delete {
+  width: 21px;
+  height: 21px;
+  position: relative;
+  margin-left: auto;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+  &::before {
+    @include delete();
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    @include delete();
+
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
 }

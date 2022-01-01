@@ -21,6 +21,12 @@ const Mode = () => {
       "--mainColor",
       "hsl(235, 21%, 11%)"
     );
+
+    document.documentElement.style.setProperty("--bgImg", `url(${bgImg})`);
+    document.documentElement.style.setProperty(
+      "--bgImgPhone",
+      `url(${bgImgPhone})`
+    );
   } else {
     document.documentElement.style.setProperty("--white", "black");
     document.documentElement.style.setProperty(
@@ -31,31 +37,16 @@ const Mode = () => {
       "--mainColor",
       "hsl(234, 39%, 85%)"
     );
+
+    document.documentElement.style.setProperty("--bgImg", `url(${bgImgDark})`);
+    document.documentElement.style.setProperty(
+      "--bgImgPhone",
+      `url(${bgImgPhoneDark})`
+    );
   }
 
-  useEffect(() => {
-    if (window.innerWidth > 400 && lightMode === true) {
-      document.documentElement.style.setProperty("--bgImg", `url(${bgImg})`);
-    } else if (window.innerWidth > 400 && lightMode === false) {
-      document.documentElement.style.setProperty(
-        "--bgImg",
-        `url(${bgImgDark})`
-      );
-    } else if (window.innerWidth <= 400 && lightMode === true) {
-      document.documentElement.style.setProperty(
-        "--bgImg",
-        `url(${bgImgPhone})`
-      );
-    } else {
-      document.documentElement.style.setProperty(
-        "--bgImg",
-        `url(${bgImgPhoneDark})`
-      );
-    }
-  }, [lightMode]);
-
   return (
-    <div className="title flex jc-sb mb-1 ai-c">
+    <div className="title flex jc-sb mb-3 ai-c">
       <h1>TODO</h1>
       <img
         src={lightMode ? iconMoon : iconSun}
