@@ -11,37 +11,56 @@ import bgImgPhoneDark from "../Images/bg-mobile-dark.jpg";
 const Mode = () => {
   const [lightMode, setLightMode] = useState(true);
 
+  const lightModeColors = {
+    white: "#ffffff",
+    mainColor: "hsl(235, 21%, 11%)",
+    thirdColor: "hsl(0, 0%, 90%)",
+    img: `url(${bgImg})`,
+    imgPhone: `url(${bgImgPhone})`,
+  };
+
+  const darkModeColors = {
+    black: "#000000",
+    mainColor: "hsl(234, 39%, 85%)",
+    thirdColor: "hsl(235, 21%, 11%)",
+    img: `url(${bgImgDark})`,
+    imgPhone: `url(${bgImgPhoneDark})`,
+  };
+
   if (lightMode) {
-    document.documentElement.style.setProperty("--white", "#ffffff");
+    document.documentElement.style.setProperty(
+      "--white",
+      lightModeColors.white
+    );
     document.documentElement.style.setProperty(
       "--thirdColor",
-      "hsl(0, 0%, 90%)"
+      lightModeColors.thirdColor
     );
     document.documentElement.style.setProperty(
       "--mainColor",
-      "hsl(235, 21%, 11%)"
+      lightModeColors.mainColor
     );
 
-    document.documentElement.style.setProperty("--bgImg", `url(${bgImg})`);
+    document.documentElement.style.setProperty("--bgImg", lightModeColors.img);
     document.documentElement.style.setProperty(
       "--bgImgPhone",
-      `url(${bgImgPhone})`
+      lightModeColors.imgPhone
     );
   } else {
-    document.documentElement.style.setProperty("--white", "black");
+    document.documentElement.style.setProperty("--white", darkModeColors.black);
     document.documentElement.style.setProperty(
       "--thirdColor",
-      "hsl(235, 21%, 11%)"
+      darkModeColors.thirdColor
     );
     document.documentElement.style.setProperty(
       "--mainColor",
-      "hsl(234, 39%, 85%)"
+      darkModeColors.mainColor
     );
 
-    document.documentElement.style.setProperty("--bgImg", `url(${bgImgDark})`);
+    document.documentElement.style.setProperty("--bgImg", darkModeColors.img);
     document.documentElement.style.setProperty(
       "--bgImgPhone",
-      `url(${bgImgPhoneDark})`
+      darkModeColors.imgPhone
     );
   }
 
