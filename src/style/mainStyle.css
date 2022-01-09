@@ -51,6 +51,7 @@ body {
   background-color: var(--thirdColor);
   background-image: var(--bgImg);
   background-repeat: no-repeat;
+  -webkit-tap-highlight-color: transparent;
 }
 body * {
   font-family: "Kumbh Sans", sans-serif;
@@ -831,6 +832,7 @@ button {
   height: 1.3rem;
   border: var(--secondaryColor) solid 1px;
   border-radius: 50%;
+  pointer-events: none;
 }
 .circle:hover {
   background-image: linear-gradient(150deg, #57ddff, #c058f3);

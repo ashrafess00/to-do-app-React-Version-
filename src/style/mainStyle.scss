@@ -55,6 +55,7 @@
   height: 1.3rem;
   border: var(--secondaryColor) solid 1px;
   border-radius: 50%;
+  pointer-events: none;
   &:hover {
     background-image: mainLibrary.$gradient;
     position: relative;
