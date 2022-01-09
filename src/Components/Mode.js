@@ -67,12 +67,14 @@ const Mode = () => {
   return (
     <div className="title flex jc-sb mb-3 ai-c">
       <h1>TODO</h1>
-      <img
-        src={lightMode ? iconMoon : iconSun}
-        alt="mode"
-        className="icon c-p"
-        onClick={() => setLightMode(!lightMode)}
-      />
+      <div>
+        <img
+          src={lightMode ? iconMoon : iconSun}
+          alt="mode"
+          className="icon c-p"
+          onClick={() => setLightMode(!lightMode)}
+        />
+      </div>
     </div>
   );
 };

@@ -258,7 +258,7 @@ const Tasks = (props) => {
       {...provided.dragHandleProps}
       ref={provided.innerRef}
     >
-      <div className={`circle mr-1 ${!active && "completedCircle"}`}>
+      <div className={`circle mr-1 ${!active ? "completedCircle" : ""}`}>
         <div></div>
       </div>
       <p className={!active ? "completed" : ""}>{value}</p>

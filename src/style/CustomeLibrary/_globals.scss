@@ -18,6 +18,7 @@ body {
   background-color: var(--thirdColor);
   background-image: var(--bgImg);
   background-repeat: no-repeat;
+  -webkit-tap-highlight-color: transparent;
   * {
     font-family: variables.$font-family;
     letter-spacing: variables.$letter-spacing;
@@ -65,11 +66,3 @@ button {
 .br {
   border-radius: variables.$radius;
 }
-
-// $op: 0.25;
-// @while $op <= 1 {
-//   .op-#{$op} {
-//     opacity: $op;
-//   }
-//   $op: $op + 0.25;
-// }
